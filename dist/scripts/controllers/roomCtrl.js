@@ -1,11 +1,11 @@
 (function() {
-    function LandingCtrl(Room) {
+    function RoomCtrl(Room) {
         var self = this;
         self.foo = "Test Text";
-        self.rooms = Room.all;
+        self.all = Room.all;
     }
     
     angular
         .module('blocChat')
-        .controller('LandingCtrl', ['Room', LandingCtrl]);
+        .controller('RoomCtrl', ['Room', RoomCtrl]);
 })();
