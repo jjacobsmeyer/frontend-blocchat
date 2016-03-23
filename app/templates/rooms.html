@@ -1,1 +1,5 @@
-<div ng-repeat="room in room.all">{{ room.$value }}</div>
+<div>
+    <button ng-click="room.createRoom()" type="submit" class="btn btn-success"> Create Room </button>
+</div>
+
+<div ng-repeat="room in room.all">{{ room.name }}</div>
