@@ -1,5 +1,19 @@
 <div>
-    <button ng-click="room.createRoom()" type="submit" class="btn btn-success"> Create Room </button>
+    <button ng-click="roomCtrl.createRoom()" type="submit" class="btn btn-success"> Create Room </button>
 </div>
 
-<div ng-repeat="room in room.all">{{ room.name }}</div>
+<div ng-click="roomCtrl.setCurrentRoom(room)" ng-repeat="room in roomCtrl.all">{{ room.name }}</div>
+
+<h1>{{ roomCtrl.currentRoom.name }}</h1>
+
+
+<div class="message-body">
+        <div class="form-group">
+            <label for="createMessage()">Create Message</label>
+            <input type="text" class="form-control" placeholder="Write your message..." ng-model="newMessage.content">
+        </div>
+        
+
+<button ng-click="roomCtrl.createMessage()" type="submit" class="btn btn-success"> Create Message </button>
+
+<p ng-repeat="message in roomCtrl.currentMessages">{{ message.content }}</p>

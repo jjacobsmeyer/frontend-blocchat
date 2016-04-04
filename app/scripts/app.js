@@ -14,7 +14,7 @@
             })
             .state('rooms', {
                 url: '/rooms',
-                controller: 'RoomCtrl as room',
+                controller: 'RoomCtrl as roomCtrl',
                 templateUrl: '/templates/rooms.html'
             })
             .state('modal', {

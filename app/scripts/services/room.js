@@ -1,19 +1,18 @@
 (function() {
     function Room($firebaseArray) {
+        var Room = {};
+    
         var roomRef = new Firebase('https://incandescent-torch-1277.firebaseio.com/rooms');
+       
+        Room.all = $firebaseArray(roomRef);
         
-        var rooms = $firebaseArray(roomRef);
-        
-        var roomAdd = function(room){
-//            console.log("add room");
+        Room.addRoom = function(room){
             rooms.$add({name: room.name,
                         create_at: Firebase.ServerValue.TIMESTAMP})
         };
         
-        return {
-            all: rooms,
-            addRoom: roomAdd
-        };
+        return Room;
+    
     };
     
     angular 
