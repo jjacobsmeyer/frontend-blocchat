@@ -1,5 +1,5 @@
 (function(){
-    function MessageService($firebaseArray){
+    function MessageService($firebaseArray, $cookies){
         var MessageService = {};
         
         var messageRef = new Firebase("https://incandescent-torch-1277.firebaseio.com/messages");
@@ -12,7 +12,7 @@
         };
         
         MessageService.sendMessage = function(message){
-            messages.$add({ userName: message.userName,
+            messages.$add({ userName: $cookies.chatRoomCurrentUser,
                             content: message.content,
                             sentAt: Firebase.ServerValue.TIMESTAMP,
                             roomId: message.roomId
@@ -28,5 +28,5 @@
     
     angular
         .module('blocChat')
-        .factory('MessageService', ['$firebaseArray', MessageService]);
+        .factory('MessageService', ['$firebaseArray', '$cookies', MessageService]);
 })();
