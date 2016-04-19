@@ -8,12 +8,12 @@
         
         $stateProvider 
             .state('landing', {
-                url: '/',
+                url: '/landing',
                 controller: 'LandingCtrl as landing',
                 templateUrl: '/templates/landing.html'
             })
             .state('rooms', {
-                url: '/rooms',
+                url: '/',
                 controller: 'RoomCtrl as roomCtrl',
                 templateUrl: '/templates/rooms.html'
             })

@@ -1,0 +1,39 @@
+
+#content {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    align-content: stretch;
+    align-items: stretch;
+
+}
+#content #chat-room-options,
+#content #chat-message-options {
+}
+
+#content #chat-room-options {
+    background-color: skyblue;
+    padding: 0em 2em 0em 1em;
+    flex-basis: 25%;
+    
+}
+
+#croom-list {
+    padding: 0em 0em 0em 1em;
+}
+
+#content #message-options {
+    background-color: azure;
+    padding: 0em 2em 0em 1em;
+    flex-basis: 75%;
+    
+   
+}
+
+#messages-sent {
+    padding: 0em 0em 0em 1em;
+}
+
+#bground {
+    background: aquamarine;
+}

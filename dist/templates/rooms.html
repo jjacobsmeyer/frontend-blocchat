@@ -1,19 +1,28 @@
-<div>
-    <button ng-click="roomCtrl.createRoom()" type="submit" class="btn btn-success"> Create Room </button>
-</div>
+<div id="bground">
+    <div id="content">
+        <div id="chat-room-options">
+        <!--    <div class="col-md-10">-->
+            <h1>Chat Rooms</h1>
+            <div id="croom-list">
+                <div ng-click="roomCtrl.setCurrentRoom(room)" ng-repeat="room in roomCtrl.all">{{ room.name }}</div>
+            </div>
+            <h3>Your in: {{ roomCtrl.currentRoom.name }}</h3>
+                    <button ng-click="roomCtrl.createRoom()" type="submit" class="btn btn-success"> Create Room </button>
+            </div>
+        <!--</div>-->
 
-<div ng-click="roomCtrl.setCurrentRoom(room)" ng-repeat="room in roomCtrl.all">{{ room.name }}</div>
-
-<h1>{{ roomCtrl.currentRoom.name }}</h1>
-
-
-<div class="message-body">
-        <div class="form-group">
-            <label for="createMessage()">Create Message</label>
-            <input type="text" class="form-control" placeholder="Write your message..." ng-model="newMessage.content">
+        <div id="message-options">
+        <!--    <div class="col-sm-2">-->
+            <h2>Messages</h2>
+            <div id="messages-sent"><p ng-repeat="message in roomCtrl.currentMessages"><b>{{ message.userName }}</b>: {{ message.content }} </p></div>
+                <div class="message-body">
+                        <div class="form-group">
+                            <label for="createMessage()">Create Message</label>
+                            <input type="text" class="form-control" placeholder="Write your message..." ng-model="newMessage.content">
+                        </div>
+                </div>
+            <button ng-click="roomCtrl.createMessage()" type="submit" class="btn btn-success"> Create Message </button>
         </div>
-        
-
-<button ng-click="roomCtrl.createMessage()" type="submit" class="btn btn-success"> Create Message </button>
-
-<p ng-repeat="message in roomCtrl.currentMessages">{{ message.userName }}: {{ message.content }} </p>
+        <!--</div>-->
+    </div>
+</div>
